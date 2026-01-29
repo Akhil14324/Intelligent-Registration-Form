@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Create Your Account</h1>
+        <form id="registrationForm" novalidate>
+            <div id="formAlerts" class="alerts"></div>
+
+            <div class="form-group">
+                <label for="firstName">First Name <span class="required">*</span></label>
+                <input type="text" id="firstName" name="firstName" required>
+                <span class="error-message" id="firstNameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name <span class="required">*</span></label>
+                <input type="text" id="lastName" name="lastName" required>
+                <span class="error-message" id="lastNameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="emailError"></span>
+            </div>
+
+            <div class="form-group inline-group">
+                <label class="section-title">Location Details</label>
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="">Select Country</option>
+                    </select>
+                    <span class="error-message" id="countryError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="state">State</label>
+                    <select id="state" name="state" disabled>
+                        <option value="">Select State</option>
+                    </select>
+                    <span class="error-message" id="stateError"></span>
+                </div>
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <select id="city" name="city" disabled>
+                        <option value="">Select City</option>
+                    </select>
+                    <span class="error-message" id="cityError"></span>
+                </div>
+            </div>
+
+            <div class="form-group phone-group">
+    <label for="phone">Phone Number <span class="required">*</span></label>
+    <div class="phone-flex">
+        <input type="text" id="countryCode" name="countryCode" readonly style="width: 70px; margin-right: 8px; background: #E1D9BC; cursor:not-allowed; border-radius:7px; border:1.5px solid #acbac4; text-align:center; font-weight:bold;" tabindex="-1">
+        <input type="tel" id="phone" name="phone" required style="flex:1 1 0;">
+    </div>
+    <span class="error-message" id="phoneError"></span>
+</div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="18">
+                <span class="error-message" id="ageError"></span>
+            </div>
+
+            <div class="form-group gender-group">
+                <label>Gender <span class="required">*</span></label>
+                <div class="gender-options">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="other">
+                    <label for="other">Other</label>
+                </div>
+                <span class="error-message" id="genderError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" style="resize:vertical; min-height:65px; max-height:120px; border-radius:17px; background:linear-gradient(135deg, #E1D9BC 60%, #F0F0DB 100%); box-shadow:0 1px 12px #30364F22; font-size:1em;"></textarea>
+                <span class="error-message" id="addressError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password <span class="required">*</span></label>
+                <input type="password" id="password" name="password" required>
+                <div class="password-strength-meter">
+                    <div id="passwordStrength"></div>
+                    <span id="passwordText"></span>
+                </div>
+                <span class="error-message" id="passwordError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password <span class="required">*</span></label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <span class="error-message" id="confirmPasswordError"></span>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the <a href="#" id="termsLink">Terms & Conditions</a> <span class="required">*</span></label>
+                <span class="error-message" id="termsError"></span>
+            </div>
+
+            <button type="submit" id="submitBtn" disabled>Register</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
